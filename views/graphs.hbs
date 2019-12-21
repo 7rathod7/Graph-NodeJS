@@ -1,0 +1,31 @@
+<div class="container">
+    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Gauge</a>
+
+    <div id="chart1"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            // Define the chart to be drawn.
+            data.addColumn('string', 'Element');
+            data.addColumn('number', 'Percentage');
+            var a = Math.random();
+            var b = Math.random();
+            var c = 3 - a - b;
+            data.addRows([
+                ['Nitrogen', a / 3],
+                ['Oxygen', b / 3],
+                ['Other', c / 3]
+            ]);
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+            chart.draw(data, null);
+        }
+
+        setInterval(drawChart, 1000);
+    </script>
+</div>

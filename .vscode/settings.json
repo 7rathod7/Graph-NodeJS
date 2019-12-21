@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/8da881c9-e9b5-4683-b6a7-e2079a74dd55/resourceGroups/thevehiclespoint/providers/Microsoft.Web/sites/thevehiclespoint",
+    "appService.deploySubpath": ""
+}
