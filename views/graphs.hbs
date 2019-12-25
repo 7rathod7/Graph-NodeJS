@@ -1,38 +1,61 @@
-<div class="container">
-    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Gauge</a>
-    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Bar</a>
-    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Bubble</a>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <div id="chart1"></div>
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <script type="text/javascript">
-                google.charts.load('current', { packages: ['corechart'] });
-                google.charts.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-                    var data = new google.visualization.DataTable();
-                    // Define the chart to be drawn.
-                    data.addColumn('string', 'Element');
-                    data.addColumn('number', 'Percentage');
-                    var a = Math.random();
-                    var b = Math.random();
-                    var c = 3 - a - b;
-                    data.addRows([
-                        ['Nitrogen', a / 3],
-                        ['Oxygen', b / 3],
-                        ['Other', c / 3]
-                    ]);
-
-                    // Instantiate and draw the chart.
-                    var chart = new google.visualization.PieChart(document.getElementById('chart1'));
-                    chart.draw(data, null);
-                }
-
-                setInterval(drawChart, 1000);
-            </script>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 5px;">
+        <div class="col-sm-2">
+            <div class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/diagnostics">Diagnostics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/telematics">Telematics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/graphs">Graphs</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-8">
+                    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Gauge</a>
+                    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Bar</a>
+                    <a href="/graphs/gauge" style="margin-top: 10px;" class="badge badge-info">Bubble</a>
+                    <div id="chart1"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', { packages: ['corechart'] });
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                            var data = new google.visualization.DataTable();
+                            // Define the chart to be drawn.
+                            data.addColumn('string', 'Element');
+                            data.addColumn('number', 'Percentage');
+                            var a = Math.random();
+                            var b = Math.random();
+                            var c = 3 - a - b;
+                            data.addRows([
+                                ['Nitrogen', a / 3],
+                                ['Oxygen', b / 3],
+                                ['Other', c / 3]
+                            ]);
+
+                            // Instantiate and draw the chart.
+                            var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+                            chart.draw(data, null);
+                        }
+
+                        setInterval(drawChart, 1000);
+                    </script>
+                </div>
+                {{!-- google ads --}}
+                <div class="col-sm-4">
+                    <img src="images/ad/ad2.jpg" class="img-fluid" alt="Responsive image" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
